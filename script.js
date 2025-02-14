@@ -1,17 +1,17 @@
-// Toggle Navbar for Mobile
-const menuIcon = document.getElementById('menuIcon');
-const navbar = document.getElementById('navbar');
+// Hamburger Menu Toggle
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
 
-menuIcon.addEventListener('click', () => {
-  navbar.classList.toggle('active');
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
 });
 
-// Toggle FAQ Answers
+// FAQ Dropdown
 const faqQuestions = document.querySelectorAll('.faq-question');
 
 faqQuestions.forEach(question => {
-  question.addEventListener('click', () => {
-    const answer = question.nextElementSibling;
-    answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
-  });
+    question.addEventListener('click', () => {
+        const answer = question.nextElementSibling;
+        answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+    });
 });
