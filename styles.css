@@ -1,138 +1,189 @@
 /* General Styles */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
 }
 
 header {
-  background: #333;
-  color: #fff;
-  padding: 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #333;
+    color: #fff;
+    padding: 1rem 2rem;
 }
 
-.menu-icon {
-  font-size: 2rem;
-  cursor: pointer;
-  display: none;
+header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
-.navbar ul {
-  list-style: none;
-  display: flex;
+.nav-links {
+    list-style: none;
+    display: flex;
 }
 
-.navbar ul li {
-  margin-left: 1rem;
+.nav-links li {
+    margin-left: 1rem;
 }
 
-.navbar ul li a {
-  color: #fff;
-  text-decoration: none;
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
 }
 
-.hero {
-  background: url('https://via.placeholder.com/1920x400') no-repeat center center/cover;
-  color: #fff;
-  text-align: center;
-  padding: 5rem 1rem;
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger .line {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    margin: 3px 0;
+}
+
+/* Responsive Hamburger Menu */
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #333;
+        flex-direction: column;
+        width: 100%;
+        display: none;
+    }
+
+    .nav-links li {
+        margin: 1rem 0;
+        text-align: center;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+
+.nav-links.active {
+    display: flex;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    padding: 2rem;
+    text-align: center;
 }
 
 .gallery-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
-  padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
-.gallery img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
+.gallery-container img {
+    width: 30%;
+    margin-bottom: 1rem;
+    border-radius: 10px;
 }
 
-.why-us, .faq, .contact, .social-media, .map {
-  padding: 2rem;
-  text-align: center;
+/* Why Choose Us */
+.why-choose-us {
+    padding: 2rem;
+    text-align: center;
+}
+
+/* FAQ Section */
+.faq {
+    padding: 2rem;
+    text-align: center;
 }
 
 .faq-item {
-  margin-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 
 .faq-question {
-  background: #f4f4f4;
-  border: none;
-  padding: 1rem;
-  width: 100%;
-  text-align: left;
-  cursor: pointer;
+    background: #f4f4f4;
+    border: none;
+    padding: 1rem;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
 }
 
 .faq-answer {
-  background: #e9ecef;
-  padding: 1rem;
-  display: none;
+    display: none;
+    padding: 1rem;
+    background: #f9f9f9;
+}
+
+/* Contact Form */
+.contact {
+    padding: 2rem;
+    text-align: center;
 }
 
 .contact form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.contact label {
+    margin-bottom: 0.5rem;
 }
 
 .contact input, .contact textarea {
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-.social-icons a {
-  margin: 0 1rem;
-  text-decoration: none;
-  color: #333;
-}
-
-footer {
-  background: #333;
-  color: #fff;
-  text-align: center;
-  padding: 1rem;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .menu-icon {
-    display: block;
-  }
-
-  .navbar {
-    display: none;
-    flex-direction: column;
+.contact button {
+    padding: 0.5rem;
     background: #333;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-  }
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
 
-  .navbar ul {
-    flex-direction: column;
-  }
+/* Social Media */
+.social-media {
+    padding: 2rem;
+    text-align: center;
+}
 
-  .navbar ul li {
-    margin: 0.5rem 0;
-  }
-
-  .navbar.active {
+.social-icons {
     display: flex;
-  }
+    justify-content: center;
+    gap: 1rem;
+}
+
+.social-icons img {
+    width: 30px;
+}
+
+/* Google Maps */
+.google-maps {
+    padding: 2rem;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
 }
